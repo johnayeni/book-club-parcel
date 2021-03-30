@@ -1,0 +1,68 @@
+.book-card {
+  display: grid;
+  grid-template-columns: 106px 1fr;
+  width: 100%;
+  min-height: 160px;
+  box-sizing: border-box;
+  &:hover {
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.15);
+  }
+  &__image {
+    height: 100%;
+    width: 106px;
+    object-fit: cover;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 12px;
+    &__available {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 12px;
+      &.yes {
+        color: $green;
+      }
+      &.no {
+        color: $red;
+      }
+    }
+    &__name {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    &__text {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+    &__footer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 8px;
+      width: 160px;
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 40px;
+        &:last-of-type {
+          margin-left: 11px;
+          padding-left: 11px;
+          border-left: 1px solid #dddddd;
+        }
+      }
+      &__stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        svg {
+          width: 15px;
+          height: 11px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.searchbar {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 40px;
+  width: 100%;
+  max-width: 540px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+
+  &__input {
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: none;
+    padding: 10px;
+    font-family: $font-family;
+    &::placeholder {
+      font-family: $font-family;
+    }
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+
+  &__button {
+    height: 100%;
+    width: 40px;
+    border: none;
+    background: #f9f9fb;
+
+    & svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

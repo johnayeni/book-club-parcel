@@ -1,0 +1,75 @@
+.sidebar {
+  width: 100%;
+  padding: 22px 0;
+  box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      display: none;
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+
+      &__title {
+        font-size: 18px;
+      }
+
+      &__subtitle {
+        margin-top: 4px;
+        font-size: 12px;
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  &__section {
+    padding: 22px 40px;
+    border-bottom: 1px solid #eeeeee;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    margin: 24px 0;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0;
+
+    & a {
+      font-size: 14px;
+      color: $black;
+      text-decoration: none;
+      &.active {
+        color: $green;
+      }
+    }
+    & span {
+      font-size: 12px;
+      color: #aaaaaa;
+      &.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 20px;
+        background-color: $green;
+        border-radius: 10px;
+        color: $white;
+        margin-right: -8px;
+      }
+    }
+  }
+}

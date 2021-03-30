@@ -1,0 +1,33 @@
+#app {
+  main {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    height: calc(100vh - 100px);
+    overflow-y: hidden;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: scroll;
+      margin-bottom: 100px;
+      &__title {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 14px 0;
+        margin: 40px 40px 0 40px;
+        border-bottom: 1px solid #eeeeee;
+        box-sizing: border-box;
+        letter-spacing: 3px;
+      }
+      &__books {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-auto-flow: row;
+        gap: 20px;
+        padding: 40px;
+      }
+    }
+  }
+}
