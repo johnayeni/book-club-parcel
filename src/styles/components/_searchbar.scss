@@ -1,37 +1,95 @@
 .searchbar {
-  display: grid;
-  align-items: center;
-  grid-template-columns: auto 40px;
+  display: flex;
   width: 100%;
   max-width: 540px;
-  height: 40px;
+  margin: 0 16px;
   box-sizing: border-box;
-  border: 1px solid #dddddd;
+  transition: all 0.3s, background 0s, height 0s ease;
 
-  &__input {
-    height: 100%;
-    box-sizing: border-box;
-    border-radius: 0;
+  &__toggle {
+    display: none;
     border: none;
-    padding: 10px;
-    font-family: $font-family;
-    &::placeholder {
+    background: none;
+    margin-right: 30px;
+    padding: 0;
+  }
+
+  &__box {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 40px;
+    width: 100%;
+    max-width: 540px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+
+    &__input {
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 0;
+      border: none;
+      padding: 10px;
       font-family: $font-family;
+      &::placeholder {
+        font-family: $font-family;
+      }
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
     }
-    &::-webkit-calendar-picker-indicator {
-      display: none;
+
+    &__button {
+      height: 100%;
+      width: 40px;
+      border: none;
+      background: #f9f9fb;
+
+      & svg {
+        height: 16px;
+        width: 16px;
+      }
+    }
+
+    @include mobile {
+      border: none;
+      display: flex;
+      justify-content: flex-end;
+      &__input {
+        display: none;
+      }
+      &__button {
+        background: none;
+      }
     }
   }
 
-  &__button {
-    height: 100%;
-    width: 40px;
-    border: none;
-    background: #f9f9fb;
-
-    & svg {
-      height: 16px;
-      width: 16px;
+  @include mobile {
+    &.is-open {
+      align-items: center;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 1;
+      height: 100%;
+      max-width: none;
+      background: $white;
+      margin: 0;
+      padding: 25px 40px;
+      .searchbar__toggle {
+        display: block;
+      }
+      .searchbar__box {
+        display: grid;
+        justify-content: initial;
+        border: 1px solid #dddddd;
+        &__input {
+          display: block;
+        }
+        &__button {
+          background: #f9f9fb;
+        }
+      }
     }
   }
 }

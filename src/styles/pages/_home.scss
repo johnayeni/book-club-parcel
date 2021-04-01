@@ -5,6 +5,10 @@
     height: calc(100vh - 100px);
     overflow-y: hidden;
 
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+
     .content {
       display: flex;
       flex-direction: column;
@@ -20,6 +24,9 @@
         border-bottom: 1px solid #eeeeee;
         box-sizing: border-box;
         letter-spacing: 3px;
+        @include mobile {
+          margin: 40px 10px 0 10px;
+        }
       }
       &__books {
         display: grid;
@@ -27,6 +34,9 @@
         grid-auto-flow: row;
         gap: 20px;
         padding: 40px;
+        @include mobile {
+          padding: 10px;
+        }
       }
     }
   }

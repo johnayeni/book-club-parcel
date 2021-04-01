@@ -3,9 +3,36 @@
   padding: 22px 0;
   box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.1);
 
+  @include mobile {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: $white;
+    margin-left: -100vw;
+    transition: margin 0.3s ease;
+    &.is-open {
+      margin-left: 0;
+    }
+  }
+
+  &__back-button {
+    margin: 22px 40px;
+    padding: 0;
+    background: none;
+    border: none;
+    display: none;
+    @include mobile {
+      display: block;
+    }
+  }
+
   &__logo {
     display: flex;
     align-items: center;
+    margin: 0 40px;
 
     @include desktop {
       display: none;
